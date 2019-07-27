@@ -11,14 +11,14 @@ using namespace std;
 
 int main(){
 
-    string miles;
-    double mile, kilometers;
+    int nAge = 17;
 
-    cout << "Enter miles: ";
-    getline(cin, miles);
-    mile = stod(miles);
-    kilometers = mile * 1.60934;
-    printf("%.1f miles equals %.4f", mile, kilometers);
+    if(nAge == 17)
+    cout << "You're old enough to drive";
+    else
+    cout << "There we go!";
+    
+
     
     return 0;
 }
