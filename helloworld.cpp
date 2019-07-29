@@ -11,12 +11,49 @@ using namespace std;
 
 int main(){
 
-    int nAge = 17;
+    cout << "Enter your problem: ";
+    string sSentence;
+    getline(cin,sSentence);
+    vector<string>vecsWords;
+    stringstream ss(sSentence);
+    string sIndivStr;
+    char cSpace = ' ';
+    double total = 0;
 
-    if(nAge == 17)
-    cout << "You're old enough to drive";
-    else
-    cout << "There we go!";
+    while(getline(ss, sIndivStr,cSpace))
+    {
+        vecsWords.push_back(sIndivStr);
+    }
+    
+    int nInt1 = stoi(vecsWords[0]);
+    int nInt2 = stoi(vecsWords[2]);
+
+    if (vecsWords[1] == "/")
+    {
+        total = nInt1 / nInt2; 
+    } else if (vecsWords[1] == "+")
+    {
+        total = nInt1 + nInt2; 
+    } else if (vecsWords[1] == "-")
+    {
+        total = nInt1 - nInt2; 
+    } else if (vecsWords[1] == "*")
+    {
+        total = nInt1 * nInt2; 
+    } else
+    {
+        cout << "Error wrong operator used!";
+    }
+    
+    
+    
+    
+    for (int i = 0; i < vecsWords.size(); ++i)
+    {
+       cout << vecsWords[i] + " ";
+    }
+    cout << "= " << total;
+    
     
 
     
