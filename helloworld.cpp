@@ -5,57 +5,25 @@
 #include <vector>
 #include <sstream>
 #include <limits>
+#include <numeric>
 
 using namespace std;
 
 
 int main(){
 
-    cout << "Enter your problem: ";
-    string sSentence;
-    getline(cin,sSentence);
-    vector<string>vecsWords;
-    stringstream ss(sSentence);
-    string sIndivStr;
-    char cSpace = ' ';
-    double total = 0;
+    vector<int> myVec(10);
+    iota(begin(myVec), end(myVec), 1);
 
-    while(getline(ss, sIndivStr,cSpace))
+    for (auto i: myVec)
     {
-        vecsWords.push_back(sIndivStr);
+        if ((i % 2) == 0 )
+        {
+            cout << i << " is even\n";
+        }
+        
     }
     
-    int nInt1 = stoi(vecsWords[0]);
-    int nInt2 = stoi(vecsWords[2]);
-
-    if (vecsWords[1] == "/")
-    {
-        total = nInt1 / nInt2; 
-    } else if (vecsWords[1] == "+")
-    {
-        total = nInt1 + nInt2; 
-    } else if (vecsWords[1] == "-")
-    {
-        total = nInt1 - nInt2; 
-    } else if (vecsWords[1] == "*")
-    {
-        total = nInt1 * nInt2; 
-    } else
-    {
-        cout << "Error wrong operator used!";
-    }
-    
-    
-    
-    
-    for (int i = 0; i < vecsWords.size(); ++i)
-    {
-       cout << vecsWords[i] + " ";
-    }
-    cout << "= " << total;
-    
-    
-
     
     return 0;
 }
