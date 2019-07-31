@@ -9,21 +9,28 @@
 
 using namespace std;
 
+vector<int> Range(int start, int max,int step);
 
 int main(){
 
-    vector<int> myVec(10);
-    iota(begin(myVec), end(myVec), 1);
+    vector<int> range = Range(1, 10 ,2);
+    for (auto i: range ) cout << i << "\n";
 
-    for (auto i: myVec)
-    {
-        if ((i % 2) == 0 )
-        {
-            cout << i << " is even\n";
-        }
-        
-    }
+
+    
     
     
     return 0;
+}
+
+vector<int> Range(int start, int max,int step){
+    int i = start;
+
+    vector<int> range;
+
+    while(i <= max){
+        range.push_back(i);
+        i+=step;
+    }
+    return range;
 }
