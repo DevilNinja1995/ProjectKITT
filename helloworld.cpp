@@ -6,16 +6,26 @@
 #include <sstream>
 #include <limits>
 #include <numeric>
+#include <ctime>
 
 using namespace std;
 
 vector<int> Range(int start, int max,int step);
 
-int main(){
+int main(){  
 
-    vector<int> range = Range(1, 10 ,2);
-    for (auto i: range ) cout << i << "\n";
+    srand(time(NULL));
+    int secretNum = rand() % 11;
+    int guess = 0;
 
+    while(true){
+        cout << "Guess the number";
+        cin >> guess;
+        if (guess > secretNum) {cout << "To Big\n";}
+        else if (guess < secretNum){cout << "To Small\n";} else{break;}
+         
+    }
+    cout << "You guessed it\n";
 
     
     
