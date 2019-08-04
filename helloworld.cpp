@@ -6,41 +6,30 @@
 #include <sstream>
 #include <limits>
 #include <numeric>
-#include <ctime>
 
 using namespace std;
 
-vector<int> Range(int start, int max,int step);
+string VectorToString(vector<string> names, char divider);
 
 int main(){  
 
-    srand(time(NULL));
-    int secretNum = rand() % 11;
-    int guess = 0;
+    vector<string> vCusts(3);
+    vCusts[0] = "Bob";
+    vCusts[1] = "Sue";
+    vCusts[2] = "Tom";
 
-    while(true){
-        cout << "Guess the number";
-        cin >> guess;
-        if (guess > secretNum) {cout << "To Big\n";}
-        else if (guess < secretNum){cout << "To Small\n";} else{break;}
-         
-    }
-    cout << "You guessed it\n";
+    string sCusts = VectorToString(vCusts, ' ');
+    cout << sCusts << "\n";
 
-    
-    
-    
     return 0;
 }
+string VectorToString(vector<string> names, char divider){
 
-vector<int> Range(int start, int max,int step){
-    int i = start;
-
-    vector<int> range;
-
-    while(i <= max){
-        range.push_back(i);
-        i+=step;
+    string sCust = "";
+    for (string y : names)
+    {
+        sCust+=y;
+        sCust+=" ";
     }
-    return range;
+    return sCust;
 }
